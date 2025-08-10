@@ -1,0 +1,30 @@
+[package]
+name = "basic-grpc-service-rust"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+colored = "3.0.0"
+futures-core = "0.3.31"
+lazy_static = "1.5.0"
+prost = "0.14.1"
+prost-types = "0.14.1"
+rand = "0.9.2"
+regex = "1.11.1"
+rustls = { version = "0.23.31", features = ["ring"] }
+tokio = { version = "1.47.1", features = ["full"] }
+tokio-stream = "0.1.17"
+tonic = { version = "0.14.0", features = [
+    "tls-ring",
+    "tls-webpki-roots",
+    "transport",
+] }
+tonic-prost = "0.14.0"
+tonic-reflection = "0.14.0"
+uuid = { version = "1.17.0", features = ["v4"] }
+
+[build-dependencies]
+tonic-prost-build = "0.14.0"
+
+[package.metadata.cargo-machete]
+ignored = ["tonic-prost-build"]
